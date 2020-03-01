@@ -1,10 +1,12 @@
 import gameplay.Player;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) throws Exception{
         System.out.println("Hello World!");
-        Player testPlayer1 = new Player();
+        /*Player testPlayer1 = new Player();
         Player testPlayer2 = new Player("Nico", 4,0,0,1,5);
         while(true){
             if(!testPlayer1.isKOed() && !testPlayer2.isKOed()){
@@ -24,7 +26,6 @@ public class Main {
                     Thread.sleep(3000);
                 }
             }
-
-        }
+        }*/
     }
 }

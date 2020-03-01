@@ -4,11 +4,14 @@ import card.Card;
 import chara.Character;
 import effect.Effect;
 import effect.EffectTime;
+import map.Panel;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Player {
+
+    private static int totalPanelNumber = 0;//玩家总数
 
     private Scanner input = new Scanner(System.in);
 
@@ -16,20 +19,32 @@ public class Player {
     private int playerNum;
     private int hp;
 
+    private Panel currentPosition;//未完成
+
     private int reviveCount = 0;
-    private boolean isKOed = false;//暂未使用
+    private boolean isKOed = false;
     private ArrayList<Effect> stockEffects = new ArrayList<>();
     private ArrayList<Card> hand = new ArrayList<>();
 
-    //因为玩家序号尚未实现，生成方法暂时均仅为测试用
-    public Player(){
+    //生成方法暂时均仅为测试用
+    public Player(Panel startPosition){
         this.character = new Character();
         this.hp = this.character.getMaxHp();
+
+        this.currentPosition = startPosition;
+
+        //分配玩家序号
+        playerNum = ++totalPanelNumber;
     }
 
-    public Player(String name, int maxHp, int atk, int def, int evd, int rec){
+    public Player(String name, int maxHp, int atk, int def, int evd, int rec, Panel startPosition){
         this.character = new Character(name, maxHp, atk, def, evd, rec);
         this.hp = this.character.getMaxHp();
+
+        this.currentPosition = startPosition;
+
+        //分配玩家序号
+        playerNum = ++totalPanelNumber;
     }
 
     //获取倒下状态
@@ -107,6 +122,13 @@ public class Player {
     public int getDamageTakenAdjustment(){
         int damageAdjustment = 0;
         return damageAdjustment;
+    }
+
+    //检查影响移动距离效果
+    //未完成
+    public int getMoveDistanceAdjustment(){
+        int distanceAdjustment = 0;
+        return distanceAdjustment;
     }
 
     //获得玩家当前信息
@@ -196,7 +218,6 @@ public class Player {
 
     //伤害的处理
     //受到攻击的玩家的受伤增减的效果在这里处理
-    //未完成，没有实现击倒功能
     public void takeDamage(int damage, boolean isBattleDamage){
         damage += getDamageTakenAdjustment();
         hp -= damage;
@@ -208,7 +229,6 @@ public class Player {
     }
 
     //被击倒的处理
-    //未完成
     public void knockOut(boolean isBattleKO){
         //状态变为已倒下
         isKOed = true;
@@ -225,7 +245,6 @@ public class Player {
     }
 
     //复活
-    //未完成
     public void revive(){
         //即使大于6也暂时视为6
         int reviveNeed = character.getRec()-reviveCount>6 ? 6 : character.getRec()-reviveCount;
@@ -242,6 +261,18 @@ public class Player {
         }
     }
 
+    //移动
+    //未完成
+    public void move(){
+        int distance = Dice.roll(getDiceCount(), getFixedDiceResult());
+        distance += getMoveDistanceAdjustment();
+        if(distance<1){distance = 1;}
+        for(int i=0;i<distance;i++){
+            //移动格子
+            currentPosition = currentPosition.nextPanel();
+        }
+    }
+
     //在对应时点触发对应效果的处理
     //未完成
     public void triggerEffect(EffectTime timePoint){
@@ -250,7 +281,7 @@ public class Player {
 
     //测试用
     public void saySomething(){//测试用
-        System.out.println("What the fu");
+        System.out.println("What the fuc");
     }
 
 }
