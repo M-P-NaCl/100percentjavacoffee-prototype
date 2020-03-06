@@ -1,5 +1,6 @@
 package map;
 
+import gameplay.GameField;
 import gameplay.Player;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ public class EncounterPanel extends Panel{
 
     //全局NPC池
     //暂时只有测试用
-    private static Player npcUPRPRC = Player.createNPCPlayer("UPRPRC",5,1,1,1);
+    private static Player npcUPRPRC = Player.createNPCPlayer("UPRPRC",3,1,1,1);
 
 
 
@@ -22,11 +23,7 @@ public class EncounterPanel extends Panel{
         System.out.println(activator.getDescription()+"should battle an enemy!");
 
         //仅为临时用
-        //以后可能会整合成正常战斗
-        activator.attack(npcUPRPRC);
-        if(!npcUPRPRC.isKOed()){
-            npcUPRPRC.attack(activator);
-        }
+        GameField.battle(activator,npcUPRPRC);
         if(npcUPRPRC.isKOed()){
             npcUPRPRC.silentRevive();
         }

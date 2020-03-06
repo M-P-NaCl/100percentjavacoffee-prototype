@@ -11,7 +11,29 @@ import java.util.Scanner;
 
 public class Player {
 
-    private static int totalPanelNumber = 0;//玩家总数
+    private static int totalPlayerNumber = 0;//玩家总数
+
+    //重置玩家序号
+    public static void resetNum() {
+        totalPlayerNumber = 0;
+    }
+
+    //NPC专用的构造
+    private Player(String name, int maxHp, int atk, int def, int evd){
+        this.character = new Character(name, maxHp, atk, def, evd, 0);
+        this.hp = this.character.getMaxHp();
+        //NPC暂不存在更多信息
+    }
+
+    //创建NPC玩家
+    //NPC与普通玩家不同处理
+    //未完成
+    public static Player createNPCPlayer(String name, int maxHp, int atk, int def, int evd){
+        Player newNPC = new Player(name,maxHp,atk,def,evd);
+        newNPC.toggleAutoMode();
+        //此处添加效果处理NPC的星星与胜场问题
+        return newNPC;
+    }
 
     private Scanner input = new Scanner(System.in);
 
@@ -37,7 +59,7 @@ public class Player {
         this.currentPosition = startPosition;
 
         //分配玩家序号
-        playerNum = ++totalPanelNumber;
+        playerNum = ++totalPlayerNumber;
     }
 
     public Player(String name, int maxHp, int atk, int def, int evd, int rec, Panel startPosition){
@@ -47,24 +69,7 @@ public class Player {
         this.currentPosition = startPosition;
 
         //分配玩家序号
-        playerNum = ++totalPanelNumber;
-    }
-
-    //NPC的构造
-    private Player(String name, int maxHp, int atk, int def, int evd){
-        this.character = new Character(name, maxHp, atk, def, evd, 0);
-        this.hp = this.character.getMaxHp();
-        //NPC暂不存在更多信息
-    }
-
-    //创建NPC玩家
-    //NPC与普通玩家不同处理
-    //未完成
-    public static Player createNPCPlayer(String name, int maxHp, int atk, int def, int evd){
-        Player newNPC = new Player(name,maxHp,atk,def,evd);
-        newNPC.toggleAutoMode();
-        //此处添加效果处理NPC的星星与胜场问题
-        return newNPC;
+        playerNum = ++totalPlayerNumber;
     }
 
     //创建电脑玩家
@@ -163,7 +168,7 @@ public class Player {
     //获得玩家当前信息
     //格式为「角色名(*HP|atk* def* evd*)」
     public String getDescription(){
-        return character.getName() + "(" + getHp() + "HP|atk" + getAtk() + " def" + getDef() + " evd" + getEvd() + ")";
+        return (playerNum>0?("Player "+playerNum):"NPC")+"-"+character.getName() + "(" + getHp() + "HP|atk" + getAtk() + " def" + getDef() + " evd" + getEvd() + ")";
     }
 
     //对对应玩家发动战斗中的攻击
@@ -309,10 +314,13 @@ public class Player {
     public void move(){
         int distance = Dice.roll(getDiceCount(), getFixedDiceResult());
         distance += getMoveDistanceAdjustment();
+        System.out.println("\t"+currentPosition.getDecription());
         if(distance<1){distance = 1;}
         for(int i=0;i<distance;i++){
             //移动格子
             currentPosition = currentPosition.nextPanel();
+            System.out.println("\t->"+currentPosition.getDecription());
+            try{Thread.sleep(500);}catch(Exception e){}
         }
         currentPosition.activate(this);
     }
@@ -327,6 +335,7 @@ public class Player {
     public void toggleAutoMode(){
         autoDecition = !autoDecition;
     }
+
 
     //测试用
     public void saySomething(){//测试用

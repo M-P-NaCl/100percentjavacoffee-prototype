@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 public abstract class Panel {
     private static int totalPanelNumber = 0;//格子总数
+
+    //重置格子号
+    public static void resetNum() {
+        totalPanelNumber = 0;
+    }
+
     private int panelNumber;//每个格子的唯一序号
     private PanelType type;//格子类型
     private int homeNumber = 0;//为0代表不是HOME格或者HOME格不属于任何玩家
