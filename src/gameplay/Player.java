@@ -19,6 +19,9 @@ public class Player {
     private int playerNum;
     private int hp;
 
+    //对于手动与自动的影响
+    private boolean autoDecition = false;
+
     private Panel currentPosition;//未完成
 
     private int reviveCount = 0;
@@ -45,6 +48,32 @@ public class Player {
 
         //分配玩家序号
         playerNum = ++totalPanelNumber;
+    }
+
+    //NPC的构造
+    private Player(String name, int maxHp, int atk, int def, int evd){
+        this.character = new Character(name, maxHp, atk, def, evd, 0);
+        this.hp = this.character.getMaxHp();
+        //NPC暂不存在更多信息
+    }
+
+    //创建NPC玩家
+    //NPC与普通玩家不同处理
+    //未完成
+    public static Player createNPCPlayer(String name, int maxHp, int atk, int def, int evd){
+        Player newNPC = new Player(name,maxHp,atk,def,evd);
+        newNPC.toggleAutoMode();
+        //此处添加效果处理NPC的星星与胜场问题
+        return newNPC;
+    }
+
+    //创建电脑玩家
+    //区别在于自动行动
+    //AI什么的不存在的
+    public static Player createCPUPlayer(String name, int maxHp, int atk, int def, int evd, int rec, Panel startPosition){
+        Player newCPU = new Player(name,maxHp,atk,def,evd,rec,startPosition);
+        newCPU.toggleAutoMode();
+        return newCPU;
     }
 
     //获取倒下状态
@@ -157,6 +186,14 @@ public class Player {
     //在这里选择防御或者闪避
     //未完成强制防御或闪避的效果
     public void tryDefend(int atkPoint){
+        if(autoDecition){
+            if(atkPoint<=getEvd()+(int)(Math.random()*2) || getHp()==1){
+                evade(atkPoint);
+            }else{
+                defend(atkPoint);
+            }
+            return;
+        }
         System.out.println();
         System.out.println(getDescription());
         System.out.print("(D - Defend, E - Evade)-> ");
@@ -261,8 +298,14 @@ public class Player {
         }
     }
 
+    //隐藏直接复活
+    public void silentRevive(){
+        isKOed = false;
+        hp = character.getMaxHp();
+    }
+
     //移动
-    //未完成
+    //未完成?
     public void move(){
         int distance = Dice.roll(getDiceCount(), getFixedDiceResult());
         distance += getMoveDistanceAdjustment();
@@ -271,12 +314,18 @@ public class Player {
             //移动格子
             currentPosition = currentPosition.nextPanel();
         }
+        currentPosition.activate(this);
     }
 
     //在对应时点触发对应效果的处理
     //未完成
     public void triggerEffect(EffectTime timePoint){
 
+    }
+
+    //切换玩家自动行动的状态
+    public void toggleAutoMode(){
+        autoDecition = !autoDecition;
     }
 
     //测试用

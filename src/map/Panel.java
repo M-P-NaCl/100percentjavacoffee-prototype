@@ -1,5 +1,7 @@
 package map;
 
+import gameplay.Player;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,7 +19,7 @@ public abstract class Panel {
     }
 
     //抽象方法，触发格子效果
-    public abstract void activate();
+    public abstract void activate(Player activator);
 
     //添加下一个格子
     //同时也会更新格子个数
@@ -49,7 +51,7 @@ public abstract class Panel {
 
             //输出选项信息
             for(Panel next: getNextPanels()){
-                System.out.println(i++ + " - " +next.getDecription());
+                System.out.println(++i + " - " +next.getDecription());
             }
             System.out.print("->");
 
