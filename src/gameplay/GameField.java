@@ -48,6 +48,10 @@ public class GameField {
         for(Panel panel:newPanels)
             map.add(panel);
     }
+    public void addPanel(ArrayList<Panel> panelList){
+        for(Panel panel:panelList)
+            map.add(panel);
+    }
 
 
     public void start(){
