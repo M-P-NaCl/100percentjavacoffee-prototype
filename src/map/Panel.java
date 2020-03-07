@@ -7,11 +7,19 @@ import java.util.Scanner;
 
 public abstract class Panel {
     private static int totalPanelNumber = 0;//格子总数
+    private static ArrayList<Panel> warpzones = new ArrayList<>();//传送格
 
-    //重置格子号
-    public static void resetNum() {
-        totalPanelNumber = 0;
+    //获得传送格列表
+    public static ArrayList<Panel> getWarpzones(){
+        return warpzones;
     }
+
+    //重置格子状态
+    public static void reset() {
+        totalPanelNumber = 0;
+        warpzones.clear();
+    }
+
 
     private int panelNumber;//每个格子的唯一序号
     private PanelType type;//格子类型

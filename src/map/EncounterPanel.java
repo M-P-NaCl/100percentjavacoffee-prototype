@@ -6,13 +6,21 @@ import gameplay.Player;
 import java.util.ArrayList;
 
 public class EncounterPanel extends Panel{
+
     public EncounterPanel(){
         super(PanelType.ENCOUNTER);
     }
 
     //全局NPC池
     //暂时只有测试用
-    private static Player npcUPRPRC = Player.createNPCPlayer("UPRPRC",3,1,1,1);
+    private static ArrayList<Player> enemys = new ArrayList<>();
+    static{
+        enemys.add(Player.createNPCPlayer("UPRPRC",3,-1,-1,-1));
+        enemys.add(Player.createNPCPlayer("Cocoa",3,-1,1,-1));
+        enemys.add(Player.createNPCPlayer("Ribbon",3,-1,-1,1));
+        enemys.add(Player.createNPCPlayer("Ashuri",3,1,-1,-1));
+    }
+    //Player npcUPRPRC = Player.createNPCPlayer("UPRPRC",3,1,1,1);
 
 
 
@@ -22,10 +30,11 @@ public class EncounterPanel extends Panel{
     public void activate(Player activator) {
         System.out.println(activator.getDescription()+"should battle an enemy!");
 
+        Player selectedNPC = enemys.get( (int)(Math.random()*enemys.size()) );
         //仅为临时用
-        GameField.battle(activator,npcUPRPRC);
-        if(npcUPRPRC.isKOed()){
-            npcUPRPRC.silentRevive();
+        GameField.battle(activator,selectedNPC);
+        if(selectedNPC.isKOed()){
+            selectedNPC.silentRevive();
         }
     }
 }
