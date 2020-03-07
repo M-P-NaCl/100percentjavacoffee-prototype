@@ -5,6 +5,7 @@ import chara.Character;
 import effect.Effect;
 import effect.EffectTime;
 import map.Panel;
+import map.PanelType;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,10 +13,12 @@ import java.util.Scanner;
 public class Player {
 
     private static int totalPlayerNumber = 0;//玩家总数
+    private static ArrayList<Player> players = new ArrayList<>();//玩家列表，仅内部使用
 
     //重置玩家序号
-    public static void resetNum() {
+    public static void reset() {
         totalPlayerNumber = 0;
+        players.clear();
     }
 
     //NPC专用的构造
@@ -60,6 +63,7 @@ public class Player {
 
         //分配玩家序号
         playerNum = ++totalPlayerNumber;
+        players.add(this);
     }
 
     public Player(String name, int maxHp, int atk, int def, int evd, int rec, Panel startPosition){
@@ -70,6 +74,7 @@ public class Player {
 
         //分配玩家序号
         playerNum = ++totalPlayerNumber;
+        players.add(this);
     }
 
     //创建电脑玩家
@@ -286,6 +291,14 @@ public class Player {
         }
     }
 
+    //恢复的处理
+    public void heal(int amount){
+        int currentDamage = getCharacter().getMaxHp() - getHp();
+        int realHealAmount = currentDamage<amount?currentDamage:amount;
+        hp += realHealAmount;
+        System.out.println(getDescription()+" healed "+realHealAmount+" HP!");
+    }
+
     //复活
     public void revive(){
         //即使大于6也暂时视为6
@@ -312,8 +325,10 @@ public class Player {
     //移动
     //未完成?
     public void move(){
+        boolean interuptted = false;
         int distance = Dice.roll(getDiceCount(), getFixedDiceResult());
         distance += getMoveDistanceAdjustment();
+
         System.out.println("\t"+currentPosition.getDecription());
         if(distance<1){distance = 1;}
         for(int i=0;i<distance;i++){
@@ -321,8 +336,61 @@ public class Player {
             currentPosition = currentPosition.nextPanel();
             System.out.println("\t->"+currentPosition.getDecription());
             try{Thread.sleep(500);}catch(Exception e){}
+
+            //经过自己的HOME格
+            if(currentPosition.getType() == PanelType.HOME && currentPosition.getHomeNumber() == playerNum){
+                //询问是否主动停留
+                System.out.println("Stop at HOME?\n" +
+                        "(Enter \"YES\" to stop, other to continue moving)");
+                System.out.print("->");
+                if(input.nextLine().equals("YES")){
+                    //不能break，因为还要判断经过玩家和TRAP
+                    i += distance;
+                }
+            }
+
+            //经过玩家时
+            for(Player eachPlayer : players){
+                if(eachPlayer != this && eachPlayer.currentPosition == this.currentPosition){
+                    System.out.println("Stop to Battle "+eachPlayer.getDescription()+"?\n" +
+                            "(Enter \"YES\" to stop, other to continue moving)");
+                    System.out.print("->");
+                    if(input.nextLine().equals("YES")){
+                        //不能break，因为还要判断经过其它玩家和TRAP
+                        i += distance;
+                        GameField.battle(this,eachPlayer);
+                        if(isKOed()){interuptted = true;}
+                    }
+                }
+            }
         }
-        currentPosition.activate(this);
+
+        //记录现在的位置
+        Panel posBeforeTrap = currentPosition;
+        //在判断TRAP卡效果时使用
+        boolean moved = false;
+        //如果没倒下会在这里触发TRAP卡（未完成）
+
+        //如果位置发生变化或是倒下，则这次不触发格子效果
+        if(moved || isKOed()){
+            interuptted = true;
+        }
+
+        //如果没别的事情就触发格子效果
+        if(!interuptted)
+            currentPosition.activate(this);
+    }
+
+    //传送
+    public void warpto(Panel destination){
+        currentPosition = destination;
+        System.out.println("Warped to "+currentPosition.getDecription()+"!");
+    }
+
+    //进行目标检测
+    //未完成
+    public void checkNorma(){
+        System.out.println("Norma Check!");
     }
 
     //在对应时点触发对应效果的处理
