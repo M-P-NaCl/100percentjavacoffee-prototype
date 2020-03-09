@@ -1,3 +1,6 @@
+import effect.Effect;
+import effect.EffectTime;
+import effect.EffectType;
 import gameplay.GameField;
 import gameplay.Player;
 import map.*;
@@ -82,6 +85,9 @@ public class Main {
 
         Player testPlayer1 = new Player(testPanels.get(0));
         Player testPlayer2 = new Player("Nico", 4,0,0,1,5,testPanels.get(0));
+
+        testPlayer2.recieveEffect(new Effect("Nico is kawaii", 1, 999, EffectType.CHANGE_DAMAGE_GIVEN,3));
+        testPlayer1.recieveEffect(new Effect("QP is kawaii too", 1, 1, EffectType.CHANGE_DAMAGE_TAKEN,-1, EffectTime.DAMAGE_TAKEN));
 
         GameField testField = new GameField();
 

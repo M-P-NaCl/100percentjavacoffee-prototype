@@ -8,9 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="ea13248a-8d42-4155-bc2f-3b7f5bdd9d81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/gameplay/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/gameplay/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/effect/Effect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/effect/Effect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/effect/EffectType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OneHundredPercentJavaCoffee_Prototype/effect/EffectType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/effect/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/effect/Effect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/effect/EffectTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/effect/EffectTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/effect/EffectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/effect/EffectType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameplay/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameplay/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameplay/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameplay/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Panel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,55 +28,51 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameplay/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/effect/EffectType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="386" column="74" selection-start-line="386" selection-start-column="74" selection-end-line="386" selection-end-column="74" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#347#572#0" />
-                <element signature="e#578#861#0" />
-                <element signature="e#1880#2182#0" />
-                <element signature="e#2246#2350#0" />
-                <element signature="e#2356#2434#0" />
-                <element signature="e#2440#2518#0" />
-                <element signature="e#2625#2757#0" />
-                <element signature="e#2763#2895#0" />
-                <element signature="e#2901#3033#0" />
-                <element signature="e#3138#3250#0" />
-                <element signature="e#3360#3469#0" />
-                <element signature="e#3768#4021#0" />
-                <element signature="e#4027#4558#0" />
-                <element signature="e#4564#5566#0" />
-                <element signature="e#5572#6082#0" />
-                <element signature="e#6088#6663#0" />
-                <element signature="e#6669#6970#0" />
-                <element signature="e#6976#7308#0" />
-                <element signature="e#7318#7439#0" />
-                <element signature="e#7314#7894#0" />
-                <element signature="e#7900#8005#0" />
-                <element signature="e#8011#8574#0" />
-                <element signature="e#9730#9731#0" expanded="true" />
-                <element signature="e#9751#9752#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/map/WarpPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/map/WarpmovePanel.java">
+        <entry file="file://$PROJECT_DIR$/src/effect/Effect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="299">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameplay/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="841">
+              <caret line="315" column="63" lean-forward="true" selection-start-line="315" selection-start-column="63" selection-end-line="315" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#363#466#0" />
+                <element signature="e#2059#2361#0" />
+                <element signature="e#2924#2925#0" expanded="true" />
+                <element signature="e#2949#2950#0" expanded="true" />
+                <element signature="e#3822#3823#0" expanded="true" />
+                <element signature="e#5466#5467#0" expanded="true" />
+                <element signature="e#5493#5494#0" expanded="true" />
+                <element signature="e#7948#8528#0" />
+                <element signature="e#8534#8639#0" />
+                <element signature="e#8645#10760#0" />
+                <element signature="e#10766#10936#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/effect/EffectTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -78,25 +80,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/map/Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="310">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#311#312#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/map/HomePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-              <folding>
-                <element signature="e#240#241#0" expanded="true" />
-                <element signature="e#258#259#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,13 +92,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/map/DamagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="135">
               <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding>
-                <element signature="e#65#66#0" expanded="true" />
-                <element signature="e#88#89#0" expanded="true" />
                 <element signature="e#203#204#0" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#248#249#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,12 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/map/EmptyPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="180">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#63#64#0" expanded="true" />
-                <element signature="e#83#84#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -139,26 +120,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameplay/GameField.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="341">
+              <caret line="94" column="39" lean-forward="true" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#battle#0;class#GameField#0" />
+                <element signature="e#988#2291#1" />
+                <element signature="e#2429#2569#1" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/gameplay/GameField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+            <state relative-caret-position="841">
+              <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#battle#0;class#GameField#0" />
               </folding>
             </state>
           </provider>
@@ -189,10 +172,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/chara/Effects.java" />
-        <option value="$PROJECT_DIR$/src/effect/EffectTime.java" />
-        <option value="$PROJECT_DIR$/src/effect/EffectType.java" />
         <option value="$PROJECT_DIR$/src/effect/Effects.java" />
-        <option value="$PROJECT_DIR$/src/effect/Effect.java" />
         <option value="$PROJECT_DIR$/src/card/Card.java" />
         <option value="$PROJECT_DIR$/src/chara/Character.java" />
         <option value="$PROJECT_DIR$/src/gameplay/Dice.java" />
@@ -201,17 +181,20 @@
         <option value="$PROJECT_DIR$/src/map/EncounterPanel.java" />
         <option value="$PROJECT_DIR$/src/map/DropPanel.java" />
         <option value="$PROJECT_DIR$/src/map/BonusPanel.java" />
-        <option value="$PROJECT_DIR$/src/map/Panel.java" />
         <option value="$PROJECT_DIR$/src/map/MovePanel.java" />
         <option value="$PROJECT_DIR$/src/map/HealPanel.java" />
         <option value="$PROJECT_DIR$/src/map/DamagePanel.java" />
         <option value="$PROJECT_DIR$/src/map/HomePanel.java" />
         <option value="$PROJECT_DIR$/src/map/EmptyPanel.java" />
-        <option value="$PROJECT_DIR$/src/gameplay/GameField.java" />
-        <option value="$PROJECT_DIR$/src/gameplay/Player.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/map/WarpmovePanel.java" />
         <option value="$PROJECT_DIR$/src/map/WarpPanel.java" />
+        <option value="$PROJECT_DIR$/src/effect/Effect.java" />
+        <option value="$PROJECT_DIR$/src/gameplay/GameField.java" />
+        <option value="$PROJECT_DIR$/src/map/Panel.java" />
+        <option value="$PROJECT_DIR$/src/effect/EffectType.java" />
+        <option value="$PROJECT_DIR$/src/effect/EffectTime.java" />
+        <option value="$PROJECT_DIR$/src/gameplay/Player.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -229,7 +212,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,6 +239,12 @@
               <item name="OneHundredPercentJavaCoffee_Prototype" type="b2602c69:ProjectViewProjectNode" />
               <item name="OneHundredPercentJavaCoffee_Prototype" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="effect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OneHundredPercentJavaCoffee_Prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OneHundredPercentJavaCoffee_Prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gameplay" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -269,10 +257,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583573802961" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583746934673" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -372,14 +361,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583573849145</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="改善移动系统，增加挑战玩家功能">
+      <created>1583573877519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583573877519</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30615166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3190272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -416,23 +412,10 @@
     <MESSAGE value="简单的回合系统，初步完善战斗系统" />
     <MESSAGE value="完善格子效果" />
     <MESSAGE value="改善了地图的生成方式" />
-    <option name="LAST_COMMIT_MESSAGE" value="改善了地图的生成方式" />
+    <MESSAGE value="改善移动系统，增加挑战玩家功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="改善移动系统，增加挑战玩家功能" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/effect/EffectType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/effect/EffectTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chara/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -447,20 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/effect/Effect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplay/Dice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -531,6 +500,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/WarpPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/WarpmovePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/HomePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/DamagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#248#249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/map/PanelType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -538,10 +539,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/EmptyPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameplay/GameField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="841">
+          <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#battle#0;class#GameField#0" />
@@ -549,108 +557,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameplay/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/effect/EffectType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="386" column="74" selection-start-line="386" selection-start-column="74" selection-end-line="386" selection-end-column="74" />
+        <state relative-caret-position="135">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplay/Dice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/effect/Effect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/effect/EffectTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#347#572#0" />
-            <element signature="e#578#861#0" />
-            <element signature="e#1880#2182#0" />
-            <element signature="e#2246#2350#0" />
-            <element signature="e#2356#2434#0" />
-            <element signature="e#2440#2518#0" />
-            <element signature="e#2625#2757#0" />
-            <element signature="e#2763#2895#0" />
-            <element signature="e#2901#3033#0" />
-            <element signature="e#3138#3250#0" />
-            <element signature="e#3360#3469#0" />
-            <element signature="e#3768#4021#0" />
-            <element signature="e#4027#4558#0" />
-            <element signature="e#4564#5566#0" />
-            <element signature="e#5572#6082#0" />
-            <element signature="e#6088#6663#0" />
-            <element signature="e#6669#6970#0" />
-            <element signature="e#6976#7308#0" />
-            <element signature="e#7318#7439#0" />
-            <element signature="e#7314#7894#0" />
-            <element signature="e#7900#8005#0" />
-            <element signature="e#8011#8574#0" />
-            <element signature="e#9730#9731#0" expanded="true" />
-            <element signature="e#9751#9752#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/EmptyPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/gameplay/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="841">
+          <caret line="315" column="63" lean-forward="true" selection-start-line="315" selection-start-column="63" selection-end-line="315" selection-end-column="63" />
           <folding>
-            <element signature="e#63#64#0" expanded="true" />
-            <element signature="e#83#84#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#363#466#0" />
+            <element signature="e#2059#2361#0" />
+            <element signature="e#2924#2925#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#3822#3823#0" expanded="true" />
+            <element signature="e#5466#5467#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#7948#8528#0" />
+            <element signature="e#8534#8639#0" />
+            <element signature="e#8645#10760#0" />
+            <element signature="e#10766#10936#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        <state relative-caret-position="341">
+          <caret line="94" column="39" lean-forward="true" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#988#2291#1" />
+            <element signature="e#2429#2569#1" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/DamagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="e#65#66#0" expanded="true" />
-            <element signature="e#88#89#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/HomePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/WarpmovePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/WarpPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
       </provider>
     </entry>

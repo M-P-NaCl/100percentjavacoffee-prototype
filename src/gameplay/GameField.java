@@ -76,5 +76,9 @@ public class GameField {
                 }
             }
         }
+
+        //一局游戏结束后重置
+        //Player.reset();
+        //Panel.reset();
     }
 }

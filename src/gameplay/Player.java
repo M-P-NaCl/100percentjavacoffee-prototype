@@ -4,6 +4,7 @@ import card.Card;
 import chara.Character;
 import effect.Effect;
 import effect.EffectTime;
+import effect.EffectType;
 import map.Panel;
 import map.PanelType;
 
@@ -13,9 +14,9 @@ import java.util.Scanner;
 public class Player {
 
     private static int totalPlayerNumber = 0;//玩家总数
-    private static ArrayList<Player> players = new ArrayList<>();//玩家列表，仅内部使用
+    private static ArrayList<Player> players = new ArrayList<>();//总玩家
 
-    //重置玩家序号
+    //重置
     public static void reset() {
         totalPlayerNumber = 0;
         players.clear();
@@ -90,19 +91,33 @@ public class Player {
     public boolean isKOed(){return isKOed;}
 
     //检测影响攻防闪效果
-    //未完成
     public int checkAtkVariation(){
         int var = 0;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.CHANGE_ATK_STAT){
+                var += each.getStrength();
+            }
+        }
         return var;
     }
 
     public int checkDefVariation(){
         int var = 0;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.CHANGE_DEF_STAT){
+                var += each.getStrength();
+            }
+        }
         return var;
     }
 
     public int checkEvdVariation(){
         int var = 0;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.CHANGE_EVD_STAT){
+                var += each.getStrength();
+            }
+        }
         return var;
     }
 
@@ -136,30 +151,53 @@ public class Player {
     }
 
     //检查影响骰子个数效果
-    //未完成
     public int getDiceCount(){
         int diceCount = 1;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.ADD_DICE_COUNT){
+                diceCount += each.getStrength();
+            }
+            if(each.getType()== EffectType.MULTYPLY_DICE_COUNT){
+                diceCount *= each.getStrength();
+            }
+        }
         return diceCount;
     }
 
     //检查影响骰子点数效果
     //负值代表无影响
-    //未完成
     public int getFixedDiceResult(){
-        return -1;
+        int var = -1;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.CHANGE_DICE_RESULT){
+                var = each.getStrength();
+            }
+        }
+        return var;
     }
 
     //检查影响造成伤害效果
     //对目标玩家施加临时的受伤增加效果
-    //未完成
     public void getDamageGivenAdjustment(Player target){
-
+        int var = 0;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.CHANGE_DAMAGE_GIVEN){
+                var += each.getStrength();
+            }
+        }
+        if(var!=0){
+            target.recieveEffect(new Effect("对方造成伤害提升",1,1,EffectType.CHANGE_DAMAGE_TAKEN,var,EffectTime.DAMAGE_CALCULATION_END));
+        }
     }
 
     //检查影响受到伤害效果
-    //未完成
     public int getDamageTakenAdjustment(){
         int damageAdjustment = 0;
+        for (Effect each:stockEffects) {
+            if(each.getType()== EffectType.CHANGE_DAMAGE_TAKEN){
+                damageAdjustment += each.getStrength();
+            }
+        }
         return damageAdjustment;
     }
 
@@ -171,9 +209,14 @@ public class Player {
     }
 
     //获得玩家当前信息
-    //格式为「角色名(*HP|atk* def* evd*)」
+    //格式为「Player 玩家号-角色名(*HP|atk* def* evd*)」
     public String getDescription(){
         return (playerNum>0?("Player "+playerNum):"NPC")+"-"+character.getName() + "(" + getHp() + "HP|atk" + getAtk() + " def" + getDef() + " evd" + getEvd() + ")";
+    }
+
+    //获得效果
+    public void recieveEffect(Effect newEffect){
+        stockEffects.add(newEffect);
     }
 
     //对对应玩家发动战斗中的攻击
@@ -241,6 +284,9 @@ public class Player {
         int damage = atkPoint-defPoint>0 ? atkPoint-defPoint : 1;
         //调用伤害处理方法，且为战斗伤害
         takeDamage(damage, true);
+
+        //减少「伤害处理结束」时点效果的时间
+        triggerEffect(EffectTime.DAMAGE_CALCULATION_END);
     }
 
     //选择闪避时的处理
@@ -261,14 +307,22 @@ public class Player {
             System.out.println("MISS!!");
         }
 
+        //减少「伤害处理结束」时点效果的时间
+        triggerEffect(EffectTime.DAMAGE_CALCULATION_END);
     }
 
     //伤害的处理
     //受到攻击的玩家的受伤增减的效果在这里处理
     public void takeDamage(int damage, boolean isBattleDamage){
         damage += getDamageTakenAdjustment();
+        //伤害不能低于0
+        if(damage<0){damage = 0;}
         hp -= damage;
         System.out.println(damage+" Damage!");
+
+        //减少「受到伤害」时点效果的时间
+        triggerEffect(EffectTime.DAMAGE_TAKEN);
+
         //若HP变为0或以下则处理击倒
         if(hp<=0)
             knockOut(isBattleDamage);
@@ -394,9 +448,9 @@ public class Player {
     }
 
     //在对应时点触发对应效果的处理
-    //未完成
+    //暂时仅实现储备/持续效果的清理
     public void triggerEffect(EffectTime timePoint){
-
+        stockEffects.removeIf(each -> each.consume(timePoint));
     }
 
     //切换玩家自动行动的状态
