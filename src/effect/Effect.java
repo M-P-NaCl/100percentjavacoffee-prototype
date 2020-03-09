@@ -42,7 +42,7 @@ public class Effect {//未完成
 
     //在对应的时点消耗持续时长，返回值为是否耗尽
     public boolean consume(EffectTime timePoint){
-        if(consumeTime.indexOf(timePoint)>0){
+        if(consumeTime.indexOf(timePoint)>= 0){
             duration--;
         }
         return duration<=0;//消耗所有持续时长时返回true，使player清除效果
