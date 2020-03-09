@@ -7,7 +7,13 @@ import java.util.Scanner;
 
 public abstract class Panel {
     private static int totalPanelNumber = 0;//格子总数
+    private static ArrayList<Panel> panels = new ArrayList<>();//所有格子
     private static ArrayList<Panel> warpzones = new ArrayList<>();//传送格
+
+    //获得传送格信息
+    public static ArrayList<Panel> getPanels(){
+        return panels;
+    }
 
     //获得传送格列表
     public static ArrayList<Panel> getWarpzones(){
@@ -17,6 +23,7 @@ public abstract class Panel {
     //重置格子状态
     public static void reset() {
         totalPanelNumber = 0;
+        panels.clear();
         warpzones.clear();
     }
 
@@ -30,6 +37,7 @@ public abstract class Panel {
     public Panel(PanelType type){
         this.type = type;
         this.panelNumber = ++totalPanelNumber;
+        panels.add(this);
     }
 
     //抽象方法，触发格子效果

@@ -5,7 +5,6 @@ import gameplay.Player;
 public class MovePanel extends Panel {
     public MovePanel(){
         super(PanelType.MOVE);
-        Panel.getWarpzones().add(this);
     }
 
     //进行一次移动
